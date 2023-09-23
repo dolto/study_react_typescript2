@@ -62,8 +62,12 @@ let Header = styled.header`
         flex-grow: 1;
     }
 `;
-let Main = styled.div`
-    
+let Blog = styled.main`
+    h2{
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
 `;
 let MainBanner = styled.div`
     border: 1px solid red;
@@ -135,7 +139,7 @@ let MainList = styled.div`
         line-height: 2rem;
     }
 `;
-let ListCard = styled.div`
+let ListCard = styled.li`
     .p_img {
         border-radius: 1rem;
         overflow: hidden;
@@ -151,15 +155,137 @@ let ListCard = styled.div`
         bottom: 0;
         color: transparent;
     }
+    .discount{
+        position: absolute;
+        background-color: transparent;
+        color: transparent;
+        border-radius: 5px;
+        min-width: 2rem;
+        text-align: center;
+        top: 5%;
+        left: 5%;
+        transition: 0.5s;
+    }
+    .detail:hover ~ .discount{
+        background-color: brown;
+        color: black;
+    }
 `;
-let Shop = styled.div`
-    
+let Shop = styled.main`
+    h1 {
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    }
+    .AllList {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    }
+    .ShopBtnWrap {
+    width: 18%;
+    margin-right: 1rem;
+    }
+    .ShopBtnWrap .btn {
+    width: 100%;
+    border-radius: 0rem;
+    border: 1px solid goldenrod;
+    color: goldenrod;
+    padding: 0.5rem 0;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    }
+    .ShopBtnWrap .btn:hover {
+    background-color: goldenrod;
+    color: #fff;
+    }
 `;
-let AllList = styled.div`
-    
-`;
-let Detail = styled.div`
-    
+let Detail = styled.main`
+    /* Detail */
+    border: 1px solid red;
+    > * {
+    border: 1px solid blue;
+    }
+    padding-top: 2rem;
+    .DetailCon {
+    display: flex;
+    justify-content: space-between;
+    }
+    .DetailCon .imgCon {
+    padding-top: 40%;
+    border: 1px solid blue;
+    width: 40%;
+    position: relative;
+    }
+    .DetailCon .imgCon img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    }
+    .DetailCon .DetailText {
+    border: 1px solid orange;
+    width: 58%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    }
+    h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 0 1.25rem;
+    width: 100%;
+    }
+    .DetailCon .DetailText p {
+    width: 100%;
+    color: goldenrod;
+    font-weight: 600;
+    }
+    .DetailCon .cartWrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    }
+    .DetailCon .countBtn {
+    min-width: 100px;
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem 0;
+    background-color: #eaeaea;
+    margin-right: 2rem;
+    }
+    .DetailCon .countBtn .plus,
+    .DetailCon .countBtn .minus {
+    cursor: pointer;
+    }
+    .DetailCon .cartBtn {
+    width: 50%;
+    border: 2px solid goldenrod;
+    color: goldenrod;
+    text-align: center;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+    .DetailCon .cartBtn:hover {
+    color: #fff;
+    background-color: goldenrod;
+    }
+    .Detail .listCon {
+    display: block;
+    width: 100%;
+    }
+    .Detail .slide {
+    border: 1px solid red;
+    position: relative;
+    }
+    .detailTab {
+    padding: 2rem 0;
+    }
+
 `;
 let ProductInfo = styled.div`
     
@@ -182,8 +308,31 @@ let Similar = styled.div`
 let Cart = styled.div`
     
 `;
-let Footer = styled.div`
-    
+let Footer = styled.footer`
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    .heigth{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+    .right{
+        text-align: end;
+    }
+    span{
+        margin: 0.2rem;
+        color: gray;
+    }
+    .black{
+        color: black;
+        font-weight: bold;
+    }
+    .low > .right > span{
+        margin-left: 1rem;
+    }
+    .height > .right{
+        border-bottom: 1px solid black;
+    }
 `;
 
-export default {AppElement, Header, Main, MainBanner, MainList, ListCard, Shop, AllList, Detail, ProductInfo, EctInfo, InfoDescription, InfoReviews, InfoAditional, Similar, Cart, Footer}
+export default {AppElement, Header, Blog, MainBanner, MainList, ListCard, Shop, Detail, ProductInfo, EctInfo, InfoDescription, InfoReviews, InfoAditional, Similar, Cart, Footer}

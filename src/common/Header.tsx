@@ -1,33 +1,33 @@
-import React from 'react';
 import s from '../style';
-import MainBanner from './MainBanner';
+import { Link } from 'react-router-dom';
 
-export default class Header extends React.Component{
-    render(): React.ReactNode {
-        return(
-            <s.Header>
-                <div className='mw'>
-                    <h1>
-                        <img src="/img/logo.svg" alt='쇼핑몰 로고'/>
-                    </h1>
-                    <nav>
-                        <a href="#">shop</a>
-                        <a href="#">blog</a>
-                        <a href="#">our story</a>
-                    </nav>
-                    <div>
-                        <a href="#">
-                            <i className='fa-solid fa-magnifying-glass'></i>
-                            </a>
-                        <a href="#">
-                            <i className='fa-solid facart-arrow-down'></i>
-                            </a>
-                        <a href="#">
-                            <i className='fa-solid fa-person'></i>
-                            </a>
-                    </div>
+const Header = () => {
+    return(
+        <s.Header>
+            <div className='mw'>
+                <h1>
+                    <Link to="/"><img src="/img/logo.svg" alt='쇼핑몰 로고'/></Link>
+                </h1>
+                <nav>
+                    <Link to="shop">shop</Link>
+                    <Link to="blog">blog</Link>
+                    <Link to="story">our story</Link>
+                </nav>
+                <div>
+                    <Link to="#">
+                        <i className='fa-solid fa-magnifying-glass'></i>
+                        </Link>
+                    <Link to="#">
+                        <i className='fa-solid facart-arrow-down'></i>
+                        </Link>
+                    <Link to="#">
+                        <i className='fa-solid fa-person'></i>
+                        </Link>
                 </div>
-            </s.Header>
-        );
-    }
+                
+            </div>
+        </s.Header>
+    );
 }
+
+export default Header;
